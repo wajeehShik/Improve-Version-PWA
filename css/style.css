@@ -194,3 +194,40 @@ body[data-home-enabled="0"] nav a[data-p="home"]{display:none}
   background: #e8f6ef;
   color: #087f5b !important;
 }
+/* إصلاح ترتيب شاشة تسجيل الدخول على الهاتف */
+#login,
+body.locked #login {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+#login {
+  padding: 24px 0;
+}
+
+#login .lhero {
+  width: 100%;
+  max-width: 480px;
+}
+
+#login .lcard {
+  width: min(400px, calc(100% - 32px));
+  margin: -44px auto 24px;
+}
+
+@media (max-width: 700px) {
+  #login,
+  body.locked #login {
+    justify-content: flex-start;
+  }
+
+  #login .lhero {
+    padding-top: calc(36px + env(safe-area-inset-top));
+  }
+
+  #login .lcard {
+    margin-top: -44px;
+  }
+}
